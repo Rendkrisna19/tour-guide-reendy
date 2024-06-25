@@ -1,0 +1,7 @@
+{
+    "rewrites": [
+      { "source": "/", "destination": "/auth/index.html" }
+    ],
+    "cleanUrls": true
+  }
+  
