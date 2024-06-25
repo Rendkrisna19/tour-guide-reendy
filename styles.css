@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&family=Playwrite+NZ:wght@100..400&display=swap');
+
+html{
+    scroll-behavior: smooth ;
+}
+
+body{
+
+    padding: 0;
+    margin-top: 0;
+    right: 0;
+    left: 0;
+    
+    font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  
+    
+
+
+}
+
+.hero-bg {
+  background-image: url('/images/hero-section2.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+}
+
+#home-text{
+  font-family: "Playwrite NZ", cursive;
+}
+
+#logo-text{
+  font-family: "Playwrite AU SA", cursive;
+}
+
+.modal {
+  display: none;
+}
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+.image-container img {
+  transition: transform 0.3s ease;
+}
+.image-container:hover img {
+  transform: scale(1.1);
+}
+.image-container:hover .overlay {
+  opacity: 1;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

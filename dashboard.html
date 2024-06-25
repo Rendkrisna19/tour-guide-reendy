@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tour Website</title>
+    <!-- Link ke Tailwind CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Link ke Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/kTcHKc6RHt0v8+0ZZUx9v7I6N9+t4hZjzxW2klpzpu3SuFZVfC4Oe+tXl27M+jz2A7czFw3FkF7Sg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--Link icon Cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrQkzG9z2YNbJ32YJ4c6tWx0z2T3cf0hJz0p9/MmVY6bxt7kSxW6Md1SzHcM+d9cuH+Q0yem5AdtlXhKQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="hero-bg h-screen relative">
+      <nav
+        class="absolute top-0 left-0 w-full flex items-center justify-between p-6 bg-transparent z-20"
+      >
+        <div class="text-white text-2xl font-bold" id="logo-text">RTour</div>
+        <div class="hidden md:flex space-x-4 text-white" id="logo-text">
+          <a href="#Home" class="hover:underline">Home</a>
+          <a href="#Destination" class="hover:underline">Destination</a>
+          <a href="#About" class="hover:underline">About</a>
+          <a href="#Contact" class="hover:underline">Contact</a>
+        </div>
+        <div class="md:hidden">
+          <button id="menu-button" class="text-white focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobile-menu"
+        class="hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex flex-col items-center justify-center text-white z-30"
+      >
+        <button id="close-button" class="mb-6 text-white focus:outline-none" >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+        <a id="logo-text" href="#Home" class="block py-2 text-xl">Home</a>
+        <a id="logo-text" href="#Destination" class="block py-2 text-xl">Destination</a>
+        <a id="logo-text" href="#About" class="block py-2 text-xl">About</a>
+        <a id="logo-text" href="#Contact" class="block py-2 text-xl">Contact</a>
+      </div>
+      
+
+      <div
+        class="absolute inset-0 flex flex-col justify-center items-center text-white z-10"
+      >
+        <h1 class="text-6xl font-bold text-center" id="home-text">Tour Guide to</h1>
+        <p class="text-lg mt-2" id="home-text">North Sumatera</p>
+      </div>
+      
+
+      <div class="absolute bottom-0 left-0 w-full p-6 z-10">
+        <div class="rounded-lg shadow-md p-4 flex items-center justify-between">
+          <input
+            type="text"
+            placeholder="Destination, city"
+            class="p-2 w-1/3 border border-gray-300 rounded-lg"
+          />
+          <input
+            type="text"
+            placeholder="Any Month"
+            class="p-2 w-1/3 border border-gray-300 rounded-lg ml-4"
+          />
+          <input
+            type="text"
+            placeholder="Sort By Date"
+            class="p-2 w-1/3 border border-gray-300 rounded-lg ml-4"
+          />
+          <button class="bg-blue-600 text-white p-2 rounded-lg ml-4">
+            Search
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!--grid menu-->
+    <section class="py-12 " id="Destination" style="background-image: url('/images/hero-section2.jpg'); background-size: cover; background-position: center;">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-4 text-center text-white" id="home-text">Daftar wisata sumut <span class="text-black-300"> by Rtour </span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          
+          <!-- Card 1 -->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="image-container cursor-pointer" onclick="openModal('./images/card1.png')">
+              <img src="./images/card1.png" alt="Thumbnail" class="w-full h-auto">
+              <div class="overlay">
+                  <span class="text-white text-4xl">+</span>
+              </div>
+          </div>
+            <div class="p-4 text-center">
+              <h2 class="text-xl font-bold mb-2">Lembah Bakrara</h2>
+              <a class="text-blue-500 " href="https://id.wikipedia.org/wiki/Lembah_Bakkara">Detail Wisata</a>
+              <a
+                href="https://maps.app.goo.gl/SjNofjiUiKLqAtyT8"
+                class="text-blue-500 hover:underline mt-4 block"
+                >Alamatnya</a
+              >
+            </div>
+          </div>
+          <!--card 2-->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="image-container cursor-pointer" onclick="openModal('./images/card2.png')">
+              <img src="./images/card2.png" alt="Thumbnail" class="w-full h-auto">
+              <div class="overlay">
+                  <span class="text-white text-4xl">+</span>
+              </div>
+          </div>
+            <div class="p-4 text-center">
+              <h2 class="text-xl font-bold mb-2">Puncak Sidiangkat</h2>
+              <a class="text-blue-500 " href="https://portalwisata.co.id/puncak-sidiangkat-wisata-di-sidikalang/">Detail Wisata</a>
+              <a
+                href="https://maps.app.goo.gl/nPwvN85QC3dSYF5s9"
+                class="text-blue-500 hover:underline mt-4 block"
+                >Alamatnya</a
+              >
+            </div>
+          </div>
+          <!--card 3-->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="image-container cursor-pointer" onclick="openModal('./images/card3.png')">
+              <img src="./images/card3.png" alt="Thumbnail" class="w-full h-auto">
+              <div class="overlay">
+                  <span class="text-white text-4xl">+</span>
+              </div>
+          </div>
+            <div class="p-4 text-center">
+              <h2 class="text-xl font-bold mb-2">Miniatur negeri Belanda di hotel legendaris di Danau Toba: Khas
+                Parapat</h2>
+              <a class="text-blue-500 " href="https://www.agoda.com/?site_id=1915013&tag=f3ebfcf4-ecc6-4a84-8642-6b1431062f77&device=c&network=o&msclkid=f5e748fb461e184c55192e82d04428c8&pslc=1&ds=xS2KyJ456BRtTSjj">Detail Wisata</a>
+              <a
+                href="https://maps.app.goo.gl/B5T23mdgbidyTxWP8"
+                class="text-blue-500 hover:underline mt-4 block"
+                >Alamatnya</a
+              >
+            </div>
+          </div>
+          <!--card 4-->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="image-container cursor-pointer" onclick="openModal('./images/card4.png')">
+              <img src="./images/card4.png" alt="Thumbnail" class="w-full h-auto">
+              <div class="overlay">
+                  <span class="text-white text-4xl">+</span>
+              </div>
+          </div>
+            <div class="p-4 text-center">
+              <h2 class="text-xl font-bold mb-2">Air Terjun Situmurun Binangalom</h2>
+              <a class="text-blue-500 " href="https://travelingyuk.com/air-terjun-situmurun-toba/256845/">Detail Wisata</a>
+              <a
+                href="https://maps.app.goo.gl/sv73TpQ2SatZA4XC8"
+                class="text-blue-500 hover:underline mt-4 block"
+                >Alamatnya</a
+              >
+            </div>
+          </div>
+          <!--card 5-->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="image-container cursor-pointer" onclick="openModal('./images/card5.png')">
+              <img src="./images/card5.png" alt="Thumbnail" class="w-full h-auto">
+              <div class="overlay">
+                  <span class="text-white text-4xl">+</span>
+              </div>
+          </div>
+          
+            <div class="p-4 text-center">
+              <h2 class="text-xl font-bold mb-2">Air Terjun Turunan Bolon/Air Terjun Naga</h2>
+              <a class="text-blue-500 " href="https://www.traveval.com/wisata/air-terjun-turunan-bolon-kabupaten-asahan">Detail Wisata</a>
+              <a
+                href="https://maps.app.goo.gl/H4XChgZTqtHxXiX98"
+                class="text-blue-500 hover:underline mt-4 block"
+                >Alamatnya</a
+              >
+            </div>
+          </div>
+
+          <!--card 6-->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="image-container cursor-pointer" onclick="openModal('./images/card6.png')">
+              <img src="./images/card6.png" alt="Thumbnail" class="w-full h-auto">
+              <div class="overlay">
+                  <span class="text-white text-4xl">+</span>
+              </div>
+          </div>
+          
+            <div class="p-4 text-center">
+              <h2 class="text-xl font-bold mb-2">Bukit Holbung</h2>
+              <a class="text-blue-500 " href="https://regional.kompas.com/read/2022/05/25/210931378/bukit-holbung-daya-tarik-harga-tiket-dan-rute">Detail Wisata</a>
+              <a
+                href="https://maps.app.goo.gl/3DWjx13ZTKPswkxZ7"
+                class="text-blue-500 hover:underline mt-4 block"
+                >Alamatnya</a
+              >
+            </div>
+          </div>
+          <!--card 7 -->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="image-container cursor-pointer" onclick="openModal('./images/card7-1.png')">
+              <img src="./images/card7-1.png" alt="Thumbnail" class="w-full h-auto">
+              <div class="overlay">
+                  <span class="text-white text-4xl">+</span>
+              </div>
+          </div>
+          
+            <div class="p-4 text-center">
+              <h2 class="text-xl font-bold mb-2">Danau Linting</h2>
+              <a class="text-blue-500 " href="https://www.nativeindonesia.com/danau-linting/">Detail Wisata</a>
+              <a
+                href="https://maps.app.goo.gl/QUS1jWdHgJ7ekjry7"
+                class="text-blue-500 hover:underline mt-4 block"
+                >Alamatnya</a
+              >
+            </div>
+          </div>
+          <!--card 8 -->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="image-container cursor-pointer" onclick="openModal('./images/card8.png')">
+              <img src="./images/card8.png" alt="Thumbnail" class="w-full h-auto">
+              <div class="overlay">
+                  <span class="text-white text-4xl">+</span>
+              </div>
+          </div>
+          
+            <div class="p-4 text-center">
+              <h2 class="text-xl font-bold mb-2">Salju panas dolok tinggi raja</h2>
+              <a class="text-blue-500 " href="https://review.bukalapak.com/travel/5-fakta-menarik-salju-panas-dolok-tinggi-raja-79003">Detail Wisata</a>
+              <a
+                href="https://maps.app.goo.gl/euFG4MQ6RYoB2Zs79"
+                class="text-blue-500 hover:underline mt-4 block"
+                >Alamatnya</a
+              >
+            </div>
+          </div>
+          <!--card 9 -->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="image-container cursor-pointer" onclick="openModal('./images/card9.png')">
+              <img src="./images/card9.png" alt="Thumbnail" class="w-full h-auto">
+              <div class="overlay">
+                  <span class="text-white text-4xl">+</span>
+              </div>
+          </div>
+          
+            <div class="p-4 text-center">
+              <h2 class="text-xl font-bold mb-2">Aek Sijornih</h2>
+              <a class="text-blue-500 " href="https://www.nativeindonesia.com/aek-sijornih/">Detail Wisata</a>
+              <a
+                href="https://maps.app.goo.gl/sgBhbpMSyyUj3Yb79"
+                class="text-blue-500 hover:underline mt-4 block"
+                >Alamatnya</a
+              >
+            </div>
+          </div>
+          <!--card 10 -->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="image-container cursor-pointer" onclick="openModal('./images/card10.png')">
+              <img src="./images/card10.png" alt="Thumbnail" class="w-full h-auto">
+              <div class="overlay">
+                  <span class="text-white text-4xl">+</span>
+              </div>
+          </div>
+
+          <div id="modal" class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center">
+            <img id="modal-img" src="https://indonesia.tripcanvas.co/id/wp-content/uploads/sites/2/2018/03/5-1-by-heyzille.jpg" alt="Large View" class="w-1/2 h-auto">
+            <span class="absolute top-0 right-0 mt-4 mr-4 text-white text-3xl cursor-pointer" onclick="closeModal()">&times;</span>
+        </div>
+          
+            <div class="p-4 text-center">
+              <h2 class="text-xl font-bold mb-2">Tangkahan</h2>
+              <a class="text-blue-500 " href="https://tangkahan.id/en/">Detail Wisata</a>
+              <a
+                href="https://maps.app.goo.gl/ePk2ZrxKVHZBgS369"
+                class="text-blue-500 hover:underline mt-4 block"
+                >Alamatnya</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contack Section -->
+    <section  class="  flex items-center justify-center h-screen" style="background-image: url('/images/grid-baground.png'); background-size: cover; background-position: center;" >
+      <div class="max-w-md w-full bg-white rounded-lg shadow-md overflow-hidden md:max-w-lg" id="Contact" style="background-image: url('/images/hero-section2.jpg'); background-size: cover; background-position: center;">
+          <div class="md:flex">
+              <div class="w-full p-4 px-5 py-5">
+                  <div class="mb-4">
+                      <h1 class="text-white font-bold text-2xl mb-1 ">Contact Us</h1>
+                      <p class="text-sm text-white">If you have questions or just want to get in touch, use the form below. We look forward to hearing from you!</p>
+                  </div>
+                  <form action="send_email.php" method="post">
+                      <div class="flex flex-col mb-4">
+                          <label for="name" class="mb-1 text-xs sm:text-sm tracking-wide text-white">Your Name</label>
+                          <div class="relative">
+                              <input id="name" name="name" type="text" class="text-sm sm:text-base placeholder-gray-500 pl-2 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="Enter your name" required>
+                          </div>
+                      </div>
+                      <div class="flex flex-col mb-4">
+                          <label for="email" class="mb-1 text-xs sm:text-sm tracking-wide text-white">User Email</label>
+                          <div class="relative">
+                              <input id="email" name="email" type="email" class="text-sm sm:text-base placeholder-gray-500 pl-2 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="Enter your email" required>
+                          </div>
+                      </div>
+                      <div class="flex flex-col mb-4">
+                          <label for="message" class="mb-1 text-xs sm:text-sm tracking-wide text-white">Message</label>
+                          <div class="relative">
+                              <textarea id="message" name="message" class="text-sm sm:text-base placeholder-gray-500 pl-2 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="Enter your message" required></textarea>
+                          </div>
+                      </div>
+                      <div class="flex w-full">
+                          <button type="submit" class="flex items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-orange-500 hover:bg-blue-600 rounded-lg py-2 w-full transition duration-150 ease-in">
+                              <span class="mr-2 uppercase">Send</span>
+                          </button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <main class="container mx-auto p-6 mt-6 bg-white rounded-lg shadow-md" id="About" style="background-image: url('/images/hero-section2.jpg'); background-size: cover; background-position: center; color:aliceblue">
+      <section class="text-center mb-6">
+        <h2 class="text-3xl font-bold ">About Us</h2>
+        <p class=" mt-2">
+          Artikel & blog.
+        </p>
+      </section>
+
+      <section class="flex flex-wrap">
+        <div class="w-full md:w-1/2 p-4">
+          <h3 class="text-2xl font-semibold  mb-2"> Daftar Wisata sumut</h3>
+          <a style="color: rgb(0, 0, 0);" href="https://www.traveloka.com/id-id/explore/destination/18-tempat-wisata-di-sumatera-utara-ini-wajib-kamu-kunjungi/16093">Blog & Artikel</a>
+        </div>
+        <div class="w-full md:w-1/2 p-4">
+          <h3 class="text-2xl font-semibold  mb-2">Daftar Wisata Danau toba</h3>
+          <a style="color: rgb(6, 2, 0);" href="https://travel.kompas.com/read/2021/08/06/201556127/20-tempat-wisata-sekitar-danau-toba-cocok-untuk-pencinta-wisata-alam">Blog & artikel</a>
+        </div>
+      </section>
+
+      <section class="mt-6" style="background-image: url('/images/grid-baground.png'); background-size: cover; background-position: center;">
+        <h3 class="text-2xl font-semibold text-center mb-4">Tentang kami</h3>
+        <div class="flex flex-wrap">
+          <div class="w-full md:w-1/3 p-4">
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+              <img
+                src="./images/card6.png"
+                alt="Team Member"
+                class="w-full h-32 object-cover rounded-md mb-4"
+              />
+              <h4 class="text-xl font-semibold ">LOREM</h4>
+              <p class="text-gray-600">LOKASI KAMI</p>
+            </div>
+          </div>
+          <div class="w-full md:w-1/3 p-4">
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+              <img
+                src="./images/card2.png"
+                alt="Team Member"
+                class="w-full h-32 object-cover rounded-md mb-4"
+              />
+              <h4 class="text-xl font-semibold ">LOREM</h4>
+              <p class="text-gray-600">LOKASI KAMI</p>
+            </div>
+          </div>
+          <div class="w-full md:w-1/3 p-4">
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+              <img
+                src="./images/card3.png"
+                alt="Team Member"
+                class="w-full h-32 object-cover rounded-md mb-4"
+              />
+              <h4 class="text-xl font-semibold ">LOREM</h4>
+              <p class="text-gray-600">LOKASI KAMI</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--footer menu-->
+
+    
+
+    <footer class="bg-black text-white py-8">
+      <div class="container mx-auto flex flex-col items-center">
+        <img src="./images/myprofile.png" alt="Your Name" class="w-22 h-24 rounded-full mb-4">
+        <h2 class="text-xl font-semibold">Muhammad Rendy Krisna</h2>
+        <p class="text-center mb-4">Web developer & Designer</p>
+        <div class="flex space-x-4">
+          <a href="https://facebook.com/profile.php?id=100089817846237" target="_blank" class="text-2xl hover:text-blue-500"><i class="fab fa-facebook"></i></a>
+          <a href="https://instagram.com/renndydev/" target="_blank" class="text-2xl hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/Rendkrisna19" target="_blank" class="text-2xl hover:text-gray-500"><i class="fab fa-github"></i></a>
+          <a href="https://wa.me/6285765007174" target="_blank" class="text-2xl hover:text-green-500"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.linkedin.com/in/rendy-krisna-27b6362a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="text-2xl hover:text-blue-500"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <button class="text-ri hover:text-pink-500" id="logout-button" value="ok">Logout</button>
+      </div>
+    </footer>
+
+
+
+
+
+
+  
+    <script src="script.js"></script>
+    <script type="module">
+      import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBXf788bo3kuPoav9F8IsUsB6mex9YJlzU",
+        authDomain: "authfirebase-dbfc9.firebaseapp.com",
+        databaseURL: "https://authfirebase-dbfc9-default-rtdb.firebaseio.com",
+        projectId: "authfirebase-dbfc9",
+        storageBucket: "authfirebase-dbfc9.appspot.com",
+        messagingSenderId: "1019854340131",
+        appId: "1:1019854340131:web:72f96d907dbdd79f8ef196"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      let logoutButton = document.getElementById("logout-button");
+      console.log(logoutButton);
+
+      logoutButton.addEventListener("click", (e) => {
+        const auth = getAuth(app);
+        signOut(auth)
+          .then(() => {
+            alert("sukses logout");
+            location.href = "http://127.0.0.1:5500/auth/index.html?#";
+          })
+          .catch((error) => {});
+      });
+    </script>
+   
+    
+
+    
+  </body>
+</html>
