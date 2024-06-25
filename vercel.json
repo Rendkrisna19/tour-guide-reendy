@@ -1,7 +1,5 @@
 {
-    "rewrites": [
-      { "source": "/", "destination": "/auth/index.html" }
-    ],
-    "cleanUrls": true
+    "redirects": [
+      { "source": "/", "destination": "/auth/index.html", "statusCode": 301 }
+    ]
   }
-  
